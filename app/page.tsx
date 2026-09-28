@@ -1,8 +1,11 @@
+import { Avatar } from "./components/avatar";
+
 const posts = [
   {
     title: "Designing Interfaces That Get Out of the Way",
     date: "September 12, 2026",
     tag: "Design",
+    author: "Avery Chen",
     excerpt:
       "Good interface design is invisible. It anticipates what people need before they ask for it, and never draws attention to itself. Here's what that looks like in practice.",
   },
@@ -10,6 +13,7 @@ const posts = [
     title: "A Simpler Way to Think About State Management",
     date: "August 28, 2026",
     tag: "Engineering",
+    author: "Avery Chen",
     excerpt:
       "Most applications don't need a complex state library. A closer look at when local state is enough, and when it genuinely isn't.",
   },
@@ -17,6 +21,7 @@ const posts = [
     title: "Writing Documentation People Actually Read",
     date: "August 9, 2026",
     tag: "Craft",
+    author: "Avery Chen",
     excerpt:
       "Documentation fails for the same handful of reasons every time. A short guide to writing docs that stay useful past the day you wrote them.",
   },
@@ -24,6 +29,7 @@ const posts = [
     title: "The Case for Boring Technology",
     date: "July 22, 2026",
     tag: "Engineering",
+    author: "Avery Chen",
     excerpt:
       "Novelty is exciting, but reliability compounds. Why choosing well-understood tools is usually the more ambitious decision.",
   },
@@ -49,6 +55,7 @@ export default function Home() {
         {posts.map((post) => (
           <article key={post.title} className="py-10 first:pt-12">
             <div className="flex items-center gap-3 text-sm text-zinc-500 dark:text-zinc-500">
+              <Avatar name={post.author} size="sm" />
               <span className="font-medium text-zinc-700 dark:text-zinc-300">
                 {post.tag}
               </span>
