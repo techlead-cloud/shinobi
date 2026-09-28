@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Suspense } from "react";
+import { AuthStatus } from "./auth-status";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,17 +14,22 @@ export function SiteHeader() {
         <Link href="/" className="text-lg font-semibold tracking-tight">
           The Weekly Read
         </Link>
-        <nav className="flex items-center gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-zinc-950 dark:hover:text-zinc-50"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex items-center gap-6">
+          <nav className="flex items-center gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-zinc-950 dark:hover:text-zinc-50"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <Suspense fallback={<span className="text-sm text-zinc-400 dark:text-zinc-600">…</span>}>
+            <AuthStatus />
+          </Suspense>
+        </div>
       </div>
     </header>
   );
