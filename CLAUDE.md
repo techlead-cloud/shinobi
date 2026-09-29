@@ -21,6 +21,10 @@ Package manager is **pnpm** (`packageManager: pnpm@12.5.1` in `package.json`).
 
 There is no test setup in this repo yet (no test runner configured, no test scripts in `package.json`).
 
+## Working with libraries and frameworks
+
+Always check Context7 for up-to-date documentation whenever implementing new frameworks, libraries, or features using them — training data may not reflect recent API changes.
+
 ## Architecture notes
 
 - **App Router only** — routes live under `app/`. There is no `pages/` directory.

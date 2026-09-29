@@ -11,7 +11,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-10 border-b border-black/[.08] bg-[var(--background)]/80 backdrop-blur-sm dark:border-white/[.1]">
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-6 py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
+        <Link href="/dsfds" className="text-lg font-semibold tracking-tight">
           The Weekly Read
         </Link>
         <div className="flex items-center gap-6">
